@@ -1,14 +1,19 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+    <device id="retina3_5" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Messages View Controller-->
         <scene sceneID="7MM-of-jgj">
             <objects>
-                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="ObA-dk-sSI" customClass="MessagesViewController" customModule="MessagesExtension" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="qkL-Od-lgU"/>
                         <viewControllerLayoutGuide type="bottom" id="n38-gi-rB5"/>
@@ -17,23 +22,87 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1e-fi-ked">
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh2-HH-add">
+                                <rect key="frame" x="29" y="39" width="262" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="3qL-dN-edZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKF-pD-Muv">
+                                <rect key="frame" x="119" y="143" width="82" height="30"/>
+                                <state key="normal" title="Send Quote"/>
+                                <connections>
+                                    <action selector="sendMessageButtonPressed" destination="ObA-dk-sSI" eventType="touchUpInside" id="Iky-V2-ehP"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC7-oo-JDe">
+                                <rect key="frame" x="29" y="257" width="262" height="102"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="102" id="jJG-by-USJ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qy6-GR-UPX">
+                                <rect key="frame" x="66" y="367" width="189" height="30"/>
+                                <state key="normal" title="Send Quote of the day - life"/>
+                                <connections>
+                                    <action selector="sendMessageButtonPressed" destination="ObA-dk-sSI" eventType="touchUpInside" id="RbJ-TM-8GH"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEu-zz-KMr">
+                                <rect key="frame" x="66" y="405" width="189" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="Lgx-qq-iok"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHH-A1-6ag">
+                                <rect key="frame" x="29" y="175" width="262" height="18"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                <nil key="textColor"/>
+                                <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="d1e-fi-ked" secondAttribute="centerY" id="H0s-hz-dDP"/>
-                            <constraint firstAttribute="centerX" secondItem="d1e-fi-ked" secondAttribute="centerX" id="wFy-hW-Bib"/>
+                            <constraint firstItem="Qy6-GR-UPX" firstAttribute="trailing" secondItem="zEu-zz-KMr" secondAttribute="trailing" id="6lO-aY-tBc"/>
+                            <constraint firstItem="pC7-oo-JDe" firstAttribute="leading" secondItem="pHH-A1-6ag" secondAttribute="leading" id="FwJ-M2-NAB"/>
+                            <constraint firstItem="zEu-zz-KMr" firstAttribute="centerX" secondItem="pHH-A1-6ag" secondAttribute="centerX" id="IW8-KM-fF4"/>
+                            <constraint firstItem="GKF-pD-Muv" firstAttribute="centerX" secondItem="pHH-A1-6ag" secondAttribute="centerX" id="LEH-Wp-iTe"/>
+                            <constraint firstItem="zEu-zz-KMr" firstAttribute="top" secondItem="Qy6-GR-UPX" secondAttribute="bottom" constant="8" symbolic="YES" id="MSp-Vh-bq0"/>
+                            <constraint firstItem="Qh2-HH-add" firstAttribute="leading" secondItem="pHH-A1-6ag" secondAttribute="leading" id="Vb7-nh-max"/>
+                            <constraint firstItem="GKF-pD-Muv" firstAttribute="top" secondItem="Qh2-HH-add" secondAttribute="bottom" constant="2" id="Vit-3Y-WF2"/>
+                            <constraint firstItem="Qh2-HH-add" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="13" id="VuU-Ph-2KM"/>
+                            <constraint firstItem="Qh2-HH-add" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" constant="19" id="XSX-4h-cgz"/>
+                            <constraint firstItem="Qh2-HH-add" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="ijc-0Q-4p0"/>
+                            <constraint firstItem="pC7-oo-JDe" firstAttribute="top" secondItem="pHH-A1-6ag" secondAttribute="bottom" constant="64" id="kZZ-1X-jXH"/>
+                            <constraint firstItem="Qy6-GR-UPX" firstAttribute="leading" secondItem="zEu-zz-KMr" secondAttribute="leading" id="oa1-SC-VuN"/>
+                            <constraint firstItem="pC7-oo-JDe" firstAttribute="trailing" secondItem="pHH-A1-6ag" secondAttribute="trailing" id="oee-Sw-HFV"/>
+                            <constraint firstItem="Qy6-GR-UPX" firstAttribute="top" secondItem="pC7-oo-JDe" secondAttribute="bottom" constant="8" symbolic="YES" id="wKz-lk-zEi"/>
+                            <constraint firstItem="Qh2-HH-add" firstAttribute="trailing" secondItem="pHH-A1-6ag" secondAttribute="trailing" id="wMJ-7S-gjV"/>
+                            <constraint firstItem="pHH-A1-6ag" firstAttribute="top" secondItem="GKF-pD-Muv" secondAttribute="bottom" constant="2" id="zub-we-Fcg"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
+                    <connections>
+                        <outlet property="AUTHORQOD" destination="pHH-A1-6ag" id="G1W-Sc-XD3"/>
+                        <outlet property="AUTHORQODLIFE" destination="zEu-zz-KMr" id="V4r-cz-ssQ"/>
+                        <outlet property="LIFELABEL" destination="pC7-oo-JDe" id="x28-MA-KTa"/>
+                        <outlet property="QODLIFE" destination="Qy6-GR-UPX" id="Hcc-IA-CN1"/>
+                        <outlet property="QuoteString" destination="Qh2-HH-add" id="QMs-yK-TBS"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="-99.375" y="122.5"/>
         </scene>
     </scenes>
 </document>

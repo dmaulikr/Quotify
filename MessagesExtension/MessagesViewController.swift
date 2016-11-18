@@ -8,17 +8,125 @@
 
 import UIKit
 import Messages
+import SwiftyJSON
+import Alamofire
 
 class MessagesViewController: MSMessagesAppViewController {
     
+    var quotez = String()
+    var authors = String()
+    var quotezy = String()
+    var authorsy = String()
+    var authorsqodlife = String()
+    var quoteqodlife = String()
+    
+    @IBOutlet weak var QuoteString: UILabel!
+    
+    @IBOutlet weak var LIFELABEL: UILabel!
+    @IBOutlet weak var AUTHORQOD: UILabel!
+    @IBOutlet weak var AUTHORQODLIFE: UILabel!
+    func getJSON(){
+    Alamofire.request("http://quotes.rest/qod.json").responseJSON { (responseData) -> Void in
+    if((responseData.result.value) != nil)
+    {
+    
+        let json = JSON(responseData.result.value!)
+    
+        let thequote = json["contents"]["quotes"].arrayValue
+    
+        for quote in thequote
+            {
+                let quotetext = quote["quote"].stringValue
+                self.quotez.append(quotetext)
+                self.QuoteString.text! = "»\(self.quotez)«"
+                
+                
+                for author in thequote
+                {
+                let authorname = author["author"].stringValue
+                self.authors.append(authorname)
+                     self.AUTHORQOD.text! = "\(self.authors)"
+                return
+                }
+            }
+        }
+    }
+}
+    func getJSON2(){
+        Alamofire.request("http://quotes.rest/qod.json").responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil)
+            {
+                
+                let json = JSON(responseData.result.value!)
+                
+                let thequotey = json["contents"]["quotes"].arrayValue
+                
+                for quotes in thequotey
+                {
+                    let quotetexty = quotes["quote"].stringValue
+                    self.quotezy.append(quotetexty)
+                    
+                    
+                    for authors in thequotey
+                    {
+                        let authornamey = authors["author"].stringValue
+                        self.authorsy.append(authornamey)
+                        return
+                    }
+                }
+            }
+        }
+    }
+    func getJSON3(){
+        Alamofire.request("http://quotes.rest/qod.json?category=life").responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil)
+            {
+                
+                let json = JSON(responseData.result.value!)
+                
+                let thequotelife = json["contents"]["quotes"].arrayValue
+                
+                for quoteslife in thequotelife
+                {
+                    let quotetextlife = quoteslife["quote"].stringValue
+                    self.quoteqodlife.append(quotetextlife)
+                     self.LIFELABEL.text! = "»\(self.quoteqodlife)«"
+                    
+                    
+                    for authorslife in thequotelife
+                    {
+                        let authornamelife = authorslife["author"].stringValue
+                        self.authorsqodlife.append(authornamelife)
+                         self.AUTHORQODLIFE.text! = "\(self.authorsqodlife)"
+                        return
+                    }
+                }
+            }
+        }
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        // Do any additional setup after loading the view
+        self.getJSON()
+        self.getJSON2()
+        self.getJSON3()
+        
     }
+    @IBAction func sendMessageButtonPressed() {
+        self.getJSON2()
+        let quoteauthortext = "Quote of the day:" + "\n" + "\n" + quotezy + "\n" + "\n" + "©\(authorsy)"
+        self.activeConversation?.insertText(quoteauthortext, completionHandler: { (error: Error?) in
+        })
+}
     
+    @IBOutlet weak var QODLIFE: UIButton!
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+        self.getJSON3()
+        let quoteauthortext = "Quote of the day - life:" + "\n" + "\n" + quoteqodlife + "\n" + "\n" + "©\(authorsqodlife)"
+        self.activeConversation?.insertText(quoteauthortext, completionHandler: { (error: Error?) in
+        })
     }
     
     // MARK: - Conversation Handling
