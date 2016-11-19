@@ -19,13 +19,19 @@ class MessagesViewController: MSMessagesAppViewController {
     var authorsy = String()
     var authorsqodlife = String()
     var quoteqodlife = String()
+    var quoteqodlifeButton = String()
+    var authorsqodlifeButton = String()
+    
+    
     
     @IBOutlet weak var QuoteString: UILabel!
     
     @IBOutlet weak var LIFELABEL: UILabel!
     @IBOutlet weak var AUTHORQOD: UILabel!
     @IBOutlet weak var AUTHORQODLIFE: UILabel!
+    
     func getJSON(){
+    URLCache.shared.removeAllCachedResponses()
     Alamofire.request("http://quotes.rest/qod.json").responseJSON { (responseData) -> Void in
     if((responseData.result.value) != nil)
     {
@@ -53,6 +59,7 @@ class MessagesViewController: MSMessagesAppViewController {
     }
 }
     func getJSON2(){
+        URLCache.shared.removeAllCachedResponses()
         Alamofire.request("http://quotes.rest/qod.json").responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil)
             {
@@ -78,6 +85,7 @@ class MessagesViewController: MSMessagesAppViewController {
         }
     }
     func getJSON3(){
+        URLCache.shared.removeAllCachedResponses()
         Alamofire.request("http://quotes.rest/qod.json?category=life").responseJSON { (responseData) -> Void in
             if((responseData.result.value) != nil)
             {
@@ -104,29 +112,62 @@ class MessagesViewController: MSMessagesAppViewController {
             }
         }
     }
+    func getJSON4(){
+        URLCache.shared.removeAllCachedResponses()
+        Alamofire.request("http://quotes.rest/qod.json?category=life").responseJSON { (responseData) -> Void in
+            if((responseData.result.value) != nil)
+            {
+                
+                let json = JSON(responseData.result.value!)
+                
+                let thequotelifeButton = json["contents"]["quotes"].arrayValue
+                
+                for quoteslifeButton in thequotelifeButton
+                {
+                    let quotetextlifeButton = quoteslifeButton["quote"].stringValue
+                    self.quoteqodlifeButton.append(quotetextlifeButton)
+                    
+                    
+                    for authorslifeButton in thequotelifeButton                             {
+                        let authornamelifeButton = authorslifeButton["author"].stringValue
+                        self.authorsqodlifeButton.append(authornamelifeButton)
+                        return
+                    }
+                }
+            }
+        }
+    }
+
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view
         self.getJSON()
         self.getJSON2()
         self.getJSON3()
+        self.getJSON4()
         
     }
     @IBAction func sendMessageButtonPressed() {
         self.getJSON2()
-        let quoteauthortext = "Quote of the day:" + "\n" + "\n" + quotezy + "\n" + "\n" + "©\(authorsy)"
+        let quoteauthortext = quotezy + "\n" + "\n" + "»\(authorsy)"
         self.activeConversation?.insertText(quoteauthortext, completionHandler: { (error: Error?) in
         })
+        requestPresentationStyle(.compact)
 }
     
-    @IBOutlet weak var QODLIFE: UIButton!
+    
+    @IBAction func sendMessageQodButtonPressed(){
+        self.getJSON4()
+        let quoteauthortext2 = quoteqodlifeButton + "\n" + "\n" + "»\(authorsqodlifeButton)"
+        self.activeConversation?.insertText(quoteauthortext2, completionHandler: { (error: Error?) in
+        })
+        requestPresentationStyle(.compact)
+
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
-        self.getJSON3()
-        let quoteauthortext = "Quote of the day - life:" + "\n" + "\n" + quoteqodlife + "\n" + "\n" + "©\(authorsqodlife)"
-        self.activeConversation?.insertText(quoteauthortext, completionHandler: { (error: Error?) in
-        })
+        
     }
     
     // MARK: - Conversation Handling
