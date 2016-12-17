@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11761" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="ObA-dk-sSI">
     <device id="retina3_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -22,20 +22,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote text - No Internet Connection" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh2-HH-add">
-                                <rect key="frame" x="29" y="38" width="263" height="91"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="91" id="ary-mN-BDL"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GKF-pD-Muv">
-                                <rect key="frame" x="66" y="137" width="189" height="30"/>
+                                <rect key="frame" x="66" y="141" width="189" height="30"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="X77-Cw-cPd"/>
+                                    <constraint firstAttribute="height" constant="30" id="g0e-lx-FTJ"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Send Quote">
@@ -46,34 +37,34 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote text - No Internet Connection" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pC7-oo-JDe">
-                                <rect key="frame" x="29" y="257" width="263" height="122"/>
+                                <rect key="frame" x="29" y="244" width="263" height="122"/>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author - No Internet Connection " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pHH-A1-6ag">
-                                <rect key="frame" x="29" y="175" width="263" height="18"/>
+                                <rect key="frame" x="29" y="186" width="263" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="xgd-n4-iaE"/>
+                                    <constraint firstAttribute="height" constant="18" id="ikb-yt-EHr"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <color key="highlightedColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Author - No Internet" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zEu-zz-KMr">
-                                <rect key="frame" x="66" y="425" width="189" height="18"/>
+                                <rect key="frame" x="66" y="412" width="189" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="18" id="v0L-54-10Z"/>
+                                    <constraint firstAttribute="height" constant="18" id="JKS-5H-WOB"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="r0k-NN-32I">
-                                <rect key="frame" x="66" y="387" width="189" height="30"/>
+                                <rect key="frame" x="66" y="374" width="189" height="30"/>
                                 <color key="backgroundColor" red="0.00163941062176165" green="0.00163941062176165" blue="0.00163941062176165" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="3Nt-Oz-iWU"/>
+                                    <constraint firstAttribute="height" constant="30" id="vVd-IG-HLF"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="15"/>
                                 <state key="normal" title="Send life quote of the day">
@@ -83,28 +74,37 @@
                                     <action selector="sendMessageQodButtonPressed" destination="ObA-dk-sSI" eventType="touchUpInside" id="h9k-RO-wDV"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Quote text - No Internet Connection" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="5" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qh2-HH-add">
+                                <rect key="frame" x="29" y="42" width="263" height="91"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="91" id="bFB-hr-yZv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GKF-pD-Muv" firstAttribute="centerX" secondItem="pHH-A1-6ag" secondAttribute="centerX" id="0Gw-gJ-K50"/>
-                            <constraint firstItem="GKF-pD-Muv" firstAttribute="trailing" secondItem="r0k-NN-32I" secondAttribute="trailing" id="3jW-ep-bl6"/>
-                            <constraint firstItem="Qh2-HH-add" firstAttribute="leading" secondItem="pHH-A1-6ag" secondAttribute="leading" id="5Lv-cL-scR"/>
-                            <constraint firstItem="Qh2-HH-add" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="13" id="7ic-cy-D0v"/>
-                            <constraint firstItem="r0k-NN-32I" firstAttribute="leading" secondItem="zEu-zz-KMr" secondAttribute="leading" id="9Ms-Cf-88u"/>
-                            <constraint firstItem="Qh2-HH-add" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="CWu-ht-8Ih"/>
-                            <constraint firstItem="pC7-oo-JDe" firstAttribute="top" secondItem="pHH-A1-6ag" secondAttribute="bottom" constant="64" id="FoH-nG-AsP"/>
-                            <constraint firstItem="pHH-A1-6ag" firstAttribute="trailing" secondItem="pC7-oo-JDe" secondAttribute="trailing" id="LWV-Yy-3mj"/>
-                            <constraint firstItem="GKF-pD-Muv" firstAttribute="leading" secondItem="r0k-NN-32I" secondAttribute="leading" id="TvE-J0-DnV"/>
-                            <constraint firstItem="zEu-zz-KMr" firstAttribute="top" secondItem="r0k-NN-32I" secondAttribute="bottom" constant="8" symbolic="YES" id="W1f-n0-daT"/>
-                            <constraint firstItem="pHH-A1-6ag" firstAttribute="leading" secondItem="pC7-oo-JDe" secondAttribute="leading" id="WsR-Bv-n0r"/>
-                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="zEu-zz-KMr" secondAttribute="bottom" constant="85" id="YqH-29-8fH"/>
-                            <constraint firstItem="Qh2-HH-add" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" constant="18" id="bSn-Ym-TLh"/>
-                            <constraint firstItem="GKF-pD-Muv" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="50" id="f3A-tp-i1h"/>
-                            <constraint firstItem="r0k-NN-32I" firstAttribute="trailing" secondItem="zEu-zz-KMr" secondAttribute="trailing" id="i1i-Ve-RF8"/>
-                            <constraint firstItem="Qh2-HH-add" firstAttribute="trailing" secondItem="pHH-A1-6ag" secondAttribute="trailing" id="kJk-Ua-zgR"/>
-                            <constraint firstItem="r0k-NN-32I" firstAttribute="top" secondItem="pC7-oo-JDe" secondAttribute="bottom" constant="8" symbolic="YES" id="l5B-S3-gFu"/>
-                            <constraint firstItem="pHH-A1-6ag" firstAttribute="top" secondItem="GKF-pD-Muv" secondAttribute="bottom" constant="8" symbolic="YES" id="n9e-kZ-Vd9"/>
-                            <constraint firstItem="GKF-pD-Muv" firstAttribute="top" secondItem="Qh2-HH-add" secondAttribute="bottom" constant="8" symbolic="YES" id="qVW-XB-BCN"/>
+                            <constraint firstItem="Qh2-HH-add" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="9On-wZ-23h"/>
+                            <constraint firstItem="pHH-A1-6ag" firstAttribute="leading" secondItem="pC7-oo-JDe" secondAttribute="leading" id="Clg-v9-tXo"/>
+                            <constraint firstItem="r0k-NN-32I" firstAttribute="leading" secondItem="zEu-zz-KMr" secondAttribute="leading" id="F8T-3n-jJK"/>
+                            <constraint firstItem="n38-gi-rB5" firstAttribute="top" secondItem="zEu-zz-KMr" secondAttribute="bottom" constant="98" id="JRp-aV-gIP"/>
+                            <constraint firstItem="GKF-pD-Muv" firstAttribute="top" secondItem="Qh2-HH-add" secondAttribute="bottom" constant="8" symbolic="YES" id="JTZ-Mb-pT1"/>
+                            <constraint firstItem="GKF-pD-Muv" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="50" id="NJo-0a-Ua8"/>
+                            <constraint firstItem="Qh2-HH-add" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" constant="22" id="Rle-FU-LJk"/>
+                            <constraint firstItem="zEu-zz-KMr" firstAttribute="top" secondItem="r0k-NN-32I" secondAttribute="bottom" constant="8" symbolic="YES" id="TD2-YN-vtl"/>
+                            <constraint firstItem="GKF-pD-Muv" firstAttribute="centerX" secondItem="pHH-A1-6ag" secondAttribute="centerX" id="USx-ex-hkA"/>
+                            <constraint firstItem="Qh2-HH-add" firstAttribute="trailing" secondItem="pHH-A1-6ag" secondAttribute="trailing" id="VOn-qy-F3d"/>
+                            <constraint firstItem="pC7-oo-JDe" firstAttribute="top" secondItem="pHH-A1-6ag" secondAttribute="bottom" constant="40" id="brh-Eb-Myc"/>
+                            <constraint firstItem="r0k-NN-32I" firstAttribute="top" secondItem="pC7-oo-JDe" secondAttribute="bottom" constant="8" symbolic="YES" id="cvp-Sj-b47"/>
+                            <constraint firstItem="GKF-pD-Muv" firstAttribute="leading" secondItem="r0k-NN-32I" secondAttribute="leading" id="ePj-Ub-wqK"/>
+                            <constraint firstItem="GKF-pD-Muv" firstAttribute="trailing" secondItem="r0k-NN-32I" secondAttribute="trailing" id="kBJ-aq-y5h"/>
+                            <constraint firstItem="pHH-A1-6ag" firstAttribute="trailing" secondItem="pC7-oo-JDe" secondAttribute="trailing" id="m20-jl-JpM"/>
+                            <constraint firstItem="Qh2-HH-add" firstAttribute="leading" secondItem="zMn-AG-sqS" secondAttribute="leadingMargin" constant="13" id="qYi-Kk-b5K"/>
+                            <constraint firstItem="pHH-A1-6ag" firstAttribute="top" secondItem="GKF-pD-Muv" secondAttribute="bottom" constant="15" id="r9K-B2-wnM"/>
+                            <constraint firstItem="Qh2-HH-add" firstAttribute="leading" secondItem="pHH-A1-6ag" secondAttribute="leading" id="u8m-VL-fsn"/>
+                            <constraint firstItem="r0k-NN-32I" firstAttribute="trailing" secondItem="zEu-zz-KMr" secondAttribute="trailing" id="y49-uF-Lfb"/>
                         </constraints>
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
